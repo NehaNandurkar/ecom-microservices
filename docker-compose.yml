@@ -6,8 +6,7 @@ services:
       POSTGRES_USER: embarkx
       POSTGRES_PASSWORD: embarkx
       PGDATA: /data/postgres
-      TZ: Asia/Kolkata
-      POSTGRES_INITDB_ARGS: "--timezone=Asia/Kolkata"  
+      TZ: Asia/Kolkata  
     volumes:
       - postgres:/data/postgres
     ports:
