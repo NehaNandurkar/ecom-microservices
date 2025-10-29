@@ -33,7 +33,7 @@ public class UserController {
 	}
 
 	@GetMapping("{id}")
-	public ResponseEntity<UserResponse> getUser(@PathVariable Long id) {
+	public ResponseEntity<UserResponse> getUser(@PathVariable String id) {
 		Optional<UserResponse> userResponse = userService.fetchUser(id);
 
 	    if (userResponse.isPresent()) {
@@ -50,7 +50,7 @@ public class UserController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<String> updateUser(@RequestBody UserRequest userRequest, @PathVariable Long id) {
+	public ResponseEntity<String> updateUser(@RequestBody UserRequest userRequest, @PathVariable String id) {
 		Boolean updated = userService.updateUser(id, userRequest);
 		if (updated) {
 			return new ResponseEntity<>("User Updated Successfully", HttpStatus.OK);

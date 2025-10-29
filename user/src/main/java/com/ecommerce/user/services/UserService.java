@@ -35,7 +35,7 @@ public class UserService {
 	    return responseList;
 	}
 	
-	public Optional<UserResponse> fetchUser(Long id){
+	public Optional<UserResponse> fetchUser(String id){
 		Optional<User> userOptional = userRepository.findById(id);
 
 	    if (userOptional.isPresent()) {
@@ -54,7 +54,7 @@ public class UserService {
 	
 	
 
-	public boolean updateUser(Long id, UserRequest userRequest ){
+	public boolean updateUser(String id, UserRequest userRequest ){
 		Optional<User> optionalUser = userRepository.findById(id);
 	    
 	    if (optionalUser.isPresent()) {

@@ -1,6 +1,7 @@
 package com.ecommerce.user.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 import com.ecommerce.user.models.User;
@@ -8,6 +9,7 @@ import com.ecommerce.user.models.User;
 
 
 @Repository
-public interface UserRepository extends JpaRepository<User,Long>{
+//For mongodb we removed jpaRepository
+public interface UserRepository extends MongoRepository<User,String>{
 
 }
