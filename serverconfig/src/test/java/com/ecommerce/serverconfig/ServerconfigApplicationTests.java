@@ -1,10 +1,10 @@
-package com.demo.configserver;
+package com.ecommerce.serverconfig;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ConfigserverApplicationTests {
+class ServerconfigApplicationTests {
 
 	@Test
 	void contextLoads() {
