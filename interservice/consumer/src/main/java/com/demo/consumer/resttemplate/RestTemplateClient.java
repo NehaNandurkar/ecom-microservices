@@ -10,7 +10,8 @@ public class RestTemplateClient {
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	private static final String PROVIDER_URL="http://localhost:8081";
+//	private static final String PROVIDER_URL="http://localhost:8081";
+	private static final String PROVIDER_URL="http://provider-service";
 	
 	public String getInstanceInfo() {
 		return restTemplate.getForObject(PROVIDER_URL+"/instance-info",String.class);
