@@ -13,14 +13,9 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 @Configuration
 public class ProductServiceClientConfig {
 	
-@Bean
-@LoadBalanced
-public RestClient.Builder restClientBuilder(){
-return RestClient.builder();
-}
 
 @Bean
-public ProductServiceClient restClientInterface(RestClient.Builder restClientBuilder) {
+public ProductServiceClient productServiceClientInterface(RestClient.Builder restClientBuilder) {
 	RestClient restClient=restClientBuilder
 			.baseUrl("http://product-service")
 			.defaultStatusHandler(HttpStatusCode::is4xxClientError, (request,response)->Optional.empty())
