@@ -1,0 +1,9 @@
+# Ignore all log files
+*.log
+*.out
+
+# Ignore log folders
+logs/
+*/logs/
+**/logs/
+log/
