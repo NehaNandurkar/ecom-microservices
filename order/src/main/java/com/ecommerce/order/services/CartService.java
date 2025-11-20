@@ -17,6 +17,8 @@ import com.ecommerce.order.dtos.UserResponse;
 import com.ecommerce.order.models.CartItem;
 import com.ecommerce.order.repositories.CartItemRepository;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
 
 
 @Service
@@ -34,6 +36,7 @@ public class CartService {
 	@Autowired
 	private UserServiceClient userServiceClient;
 
+	@CircuitBreaker(name="productService")
 	public boolean addToCart(String userId, CartItemRequest request) {
 		ProductResponse productResponse=productServiceClient.getProductDetails(request.getProductId());
 		if(productResponse==null) {
